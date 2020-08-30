@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Russia | Academic</title>
+    <link>/tag/russia/</link>
+      <atom:link href="/tag/russia/index.xml" rel="self" type="application/rss+xml" />
+    <description>Russia</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sun, 30 Aug 2020 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
+      <title>Russia</title>
+      <link>/tag/russia/</link>
+    </image>
+    
+    <item>
+      <title>COVID-19 in Russia</title>
+      <link>/post/covid-19-in-russia/</link>
+      <pubDate>Sun, 30 Aug 2020 00:00:00 +0000</pubDate>
+      <guid>/post/covid-19-in-russia/</guid>
+      <description>
+&lt;script src=&#34;/rmarkdown-libs/htmlwidgets/htmlwidgets.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;/rmarkdown-libs/pymjs/pym.v1.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;/rmarkdown-libs/widgetframe-binding/widgetframe.js&#34;&gt;&lt;/script&gt;
+
+
+&lt;p&gt;The first post is about COVID19 in RUssia. The dataset is from &lt;a href=&#34;https://covid19.who.int/table&#34;&gt;World Health Organization (WHO)&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;WHO classifies COVID-19 transmission in Russia as &lt;em&gt;clusters of cases&lt;/em&gt;. WHO defines clusters of cases as “cases that are clustered in time, geographic location and or by common exposures”.&lt;/p&gt;
+&lt;p&gt;Russia has 146,748,590 people. It has large country area but only a small proportion of the areas in which people are willing to live. This could be one of reasons of &lt;em&gt;clusters of cases&lt;/em&gt; in Russia.&lt;/p&gt;
+&lt;div id=&#34;htmlwidget-1&#34; style=&#34;width:100%;height:480px;&#34; class=&#34;widgetframe html-widget&#34;&gt;&lt;/div&gt;
+&lt;script type=&#34;application/json&#34; data-for=&#34;htmlwidget-1&#34;&gt;{&#34;x&#34;:{&#34;url&#34;:&#34;/post/2020-08-30-covid-19-in-russia.en_files/figure-html//widgets/widget_tab1.html&#34;,&#34;options&#34;:{&#34;xdomain&#34;:&#34;*&#34;,&#34;allowfullscreen&#34;:false,&#34;lazyload&#34;:false}},&#34;evals&#34;:[],&#34;jsHooks&#34;:[]}&lt;/script&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2020-08-30-covid-19-in-russia.en_files/figure-html/long-tab-1.png&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

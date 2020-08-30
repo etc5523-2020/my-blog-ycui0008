@@ -33,6 +33,31 @@
   </url>
   
   <url>
+    <loc>/tag/covid-19/</loc>
+    <lastmod>2020-08-30T17:58:24+10:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/covid-19-in-russia/</loc>
+    <lastmod>2020-08-30T17:58:24+10:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/</loc>
+    <lastmod>2020-08-30T17:58:24+10:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tag/russia/</loc>
+    <lastmod>2020-08-30T17:58:24+10:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/</loc>
+    <lastmod>2020-08-30T17:58:24+10:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/courses/</loc>
     <lastmod>2019-05-05T00:00:00+01:00</lastmod>
   </url>
@@ -64,11 +89,6 @@
   
   <url>
     <loc>/tag/source-themes/</loc>
-    <lastmod>2019-04-07T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/</loc>
     <lastmod>2019-04-07T00:00:00+00:00</lastmod>
   </url>
   
@@ -149,10 +169,6 @@
   
   <url>
     <loc>/categories/</loc>
-  </url>
-  
-  <url>
-    <loc>/post/</loc>
   </url>
   
   <url>
