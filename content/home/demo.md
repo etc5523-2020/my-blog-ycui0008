@@ -4,7 +4,7 @@
 widget: blank
 
 # Activate this widget? true/false
-active: true
+active: false
 
 # This file represents a page section.
 headless: true
@@ -28,7 +28,7 @@ design:
     padding: ["20px", "0", "20px", "0"]
 ---
 
-Welcome to the demo of the **resumé template** for Academic.
+Welcome to the demo of the **resumC) template** for Academic.
 
 [View more templates](https://sourcethemes.com/academic/templates/) for Academic.
 
