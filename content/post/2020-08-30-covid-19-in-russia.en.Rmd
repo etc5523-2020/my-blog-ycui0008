@@ -17,6 +17,7 @@ image:
   focal_point: ''
   preview_only: no
 projects: []
+bibliography: references.bib
 ---
 
 ```{r setup, include = FALSE}
@@ -24,13 +25,23 @@ knitr::opts_chunk$set(echo = FALSE, fig.align = "center", message = FALSE, warni
 library(tidyverse)
 library(janitor)
 library(plotly)
+library(DT)
+library(knitr)
+library(kableExtra)
 ```
 
-The first post is about COVID19 in RUssia. The dataset is from [World Health Organization (WHO)](https://covid19.who.int/table).
 
+The first post is about COVID19 in Russia. 
+
+## Data source
+The dataset used in this post is from [World Health Organization (WHO)](https://covid19.who.int/table) and the data source is **Russian Federal State Statistics Service**.
+
+## About Russia
 WHO classifies COVID-19 transmission in Russia as *clusters of cases*. WHO defines clusters of cases as "cases that are clustered in time, geographic location and or by common exposures". 
 
-Russia has 146,748,590 people. It has large country area but only a small proportion of the areas in which people are willing to live. This could be one of reasons of *clusters of cases* in Russia.
+Russia has 146,748,590 people. It has large country area but only a small proportion of the areas in which people are willing to live. This could be one of reasons of *clusters of cases* in Russia. Table \@ref(tab:tab1) shows the COVID-19 cases reported in Russia since 31st, Jan 2020; we can see that the largest number of new cases was on 27th Apr (12559). Table \@ref(tab:sumtab) shows the statistic summary of four variables --- new cases, cumulative cases, new deaths, and cumulative deaths. 
+
+
 
 ```{r read-data, include = FALSE}
 covid_russia <- readr::read_csv(here::here("content/post/_data/WHO-COVID-19-global-data.csv")) %>% 
@@ -46,16 +57,37 @@ tab1 <- covid_russia %>%
   select(-country_code, -country, -who_region)
 
 tab1 %>% 
-  DT::datatable(options = list(pageLength = 5),
-                colnames = c("Date", "New cases", 
-                             "cumulative cases", 
-                             "New deaths", 
-                             "Cumulative deaths"),
-                caption = "COVID-19 cases reported in Russia since 2020-01-01") %>% 
+  datatable(options = list(pageLength = 5),
+            colnames = c("Date", "New cases", 
+                         "cumulative cases", 
+                         "New deaths", 
+                         "Cumulative deaths"),
+            caption = "COVID-19 cases reported in Russia since 2020-01-31") %>% 
   widgetframe::frameWidget()
 ```
 
 ```{r sumtab}
+sum_tab <- tab1 %>%  
+  select(-date_reported) %>% 
+  summary()
+
+sum_function <- function(x,tab){
+  summary(tab[x]) %>% 
+  as.data.frame() %>% 
+  separate(col = Freq, into = c("stat","value"),sep = ":") %>% 
+  pivot_wider(names_from = "stat", values_from = "value")
+}
+
+bind_rows(sum_function(2:5,tab1)) %>% 
+  select(-Var1) %>% 
+  janitor::clean_names() %>% 
+  mutate(var2 = recode(var2, 
+                       "new_cases" = "New cases",
+                       "cumulative_cases" = "Cumulative cases",
+                       "new_deaths" = "New deaths",
+                       "cumulative_deaths" = "Cumulative deaths")) %>% 
+  kable("html",col.names = c("vairble", "min", "Q1", "median", "mean", "Q3", "max")) %>% 
+  kable_styling(bootstrap_options = c("striped", "hover"))
 
 ```
 
@@ -67,3 +99,22 @@ covid_russia %>%
   geom_line()
   
 ```
+
+
+
+
+@who
+
+
+
+
+
+
+
+
+
+# References
+
+
+
+
