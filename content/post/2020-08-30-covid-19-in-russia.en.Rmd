@@ -34,12 +34,14 @@ library(kableExtra)
 The first post is about COVID19 in Russia. 
 
 ## Data source
-The dataset used in this post is from [World Health Organization (WHO)](https://covid19.who.int/table) and the data source is **Russian Federal State Statistics Service**.
+The dataset used in this post is from [World Health Organization (WHO)](https://covid19.who.int/table)[@who] and the data source is **Russian Federal State Statistics Service**.
 
 ## About Russia
 WHO classifies COVID-19 transmission in Russia as *clusters of cases*. WHO defines clusters of cases as "cases that are clustered in time, geographic location and or by common exposures". 
 
-Russia has 146,748,590 people. It has large country area but only a small proportion of the areas in which people are willing to live. This could be one of reasons of *clusters of cases* in Russia. Table \@ref(tab:tab1) shows the COVID-19 cases reported in Russia since 31st, Jan 2020; we can see that the largest number of new cases was on 27th Apr (12559). Table \@ref(tab:sumtab) shows the statistic summary of four variables --- new cases, cumulative cases, new deaths, and cumulative deaths. 
+Russia has 146,748,590 people. It has large country area but only a small proportion of the areas in which people are willing to live. This could be one of reasons of *clusters of cases* in Russia. Table \@ref(tab:tab1) shows the COVID-19 cases reported in Russia since 31st, Jan 2020; we can see that the largest number of new cases was on 27th Apr (12559 new cases on this day). 
+
+
 
 
 
@@ -66,6 +68,8 @@ tab1 %>%
   widgetframe::frameWidget()
 ```
 
+Table \@ref(tab:sumtab) shows the statistic summary of four variables --- new cases, cumulative cases, new deaths, and cumulative deaths. The max of cumulative cases and cumulative deaths means the latest numbers, while the max of new cases and new deaths shows the peaks for these two variables. This table is not informative enough. So, I draw a boxplot (Fig\@ref(fig:boxplot)). The boxplot uses y-axis scales and transformations because when I put deaths and new cases in a same plot, the deaths can be hardly seen if they share same y-scale. The boxplot for new cases is left-skewed, which means  newly reported cases are still high. In other words, Russia government is trying to control the virus spreading but does not succeed yet.
+
 ```{r sumtab}
 sum_tab <- tab1 %>%  
   select(-date_reported) %>% 
@@ -91,29 +95,48 @@ bind_rows(sum_function(2:5,tab1)) %>%
 
 ```
 
-```{r long-tab}
+```{r boxplot}
+boxplot <- tab1 %>% 
+  select(-date_reported) %>% 
+  pivot_longer(cols = everything(), names_to = "type", values_to = "cases") %>% 
+  mutate(cases = as.numeric(cases)) %>% 
+  ggplot(aes(x = type, y = cases, color = type)) +
+  geom_boxplot() +
+  scale_y_log10() +
+  ylab("Cases (log10)")
+ggplotly()
+```
+
+Fig\@ref(fig:lineplot) supports my conclusion above. Some pitfalls in the red line indicates the test results were not reported at these days. 
+
+```{r lineplot}
 covid_russia %>% 
   pivot_longer(cols = c(`new_cases`, `new_deaths`), names_to = "new", values_to = "cases") %>% 
   select(date_reported, new, cases) %>% 
   ggplot(aes(x = date_reported, y = cases, color = new))+
-  geom_line()
-  
+  geom_line() +
+  scale_y_log10() +
+  ylab("Cases (log10)")
+
 ```
 
 
+## My viewpoint
 
-
-@who
-
-
-
+The bad situation in Russia will continue affecting its economy in at least next six months. Russia's economy is vulnerable and Russia government wants eagerly to do their best for reopen their markets. Russia president, Putin, even allowed the coronavirus vaccine to skip crucial trials (i.e. testing in a larger number of humans to confirm its effectiveness) and claimed one of his daughters had been jabbed [@abc]. All these actions are becuase Russia cannot wait any longer. However, the bad news is covid-19 is mutated along time [@groch]. We don't know whether the vaccine will be still effective in future, even in next month.
 
 
 
 
+## Acknowledgements
+The packages used for producing this post are: 
+
+tidyverse [@tidyverse], janitor [@janitor], plotly [@plotly], DT [@DT], knitr [@knitr], kableExtra [@kableExtra], readr [@readr]
 
 
-# References
+
+
+## References
 
 
 
