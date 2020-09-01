@@ -94,7 +94,7 @@ bind_rows(sum_function(2:5,tab1)) %>%
 
 ```
 
-```{r boxplot, fig.cap = "123"}
+```{r boxplot, fig.cap = "Boxplot for four cumulative cases, cumulative deaths, new cases, and new deaths"}
 boxplot <- tab1 %>% 
   select(-date_reported) %>% 
   pivot_longer(cols = everything(), names_to = "type", values_to = "cases") %>% 
@@ -108,7 +108,7 @@ ggplotly()
 
 Fig\@ref(fig:lineplot) supports my conclusion above. Some pitfalls in the red line indicates the test results were not reported at these days. 
 
-```{r lineplot, fig.cap = "455"}
+```{r lineplot, fig.cap = "Line plot illustrates the new cases and new death trend in Russia since 2020-01-31"}
 covid_russia %>% 
   pivot_longer(cols = c(`new_cases`, `new_deaths`), names_to = "new", values_to = "cases") %>% 
   select(date_reported, new, cases) %>% 
