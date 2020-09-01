@@ -122,7 +122,7 @@ covid_russia %>%
 
 ## My viewpoint
 
-The bad situation in Russia will continue affecting its economy in at least next six months. Russia's economy is vulnerable and Russia government wants eagerly to do their best for reopen their markets. Russia president, Putin, even allowed the coronavirus vaccine to skip crucial trials (i.e. testing in a larger number of humans to confirm its effectiveness) and claimed one of his daughters had been jabbed [@abcnews]. All these actions are becuase Russia cannot wait any longer. However, the bad news is covid-19 is mutated along time [@groch]. We don't know whether the vaccine will be still effective in future, even in next month. 
+The bad situation in Russia will continue affecting its economy in at least next six months. Russia's economy is vulnerable and Russia government wants eagerly to do their best for reopen their markets. Russia president, Putin, even allowed the coronavirus vaccine to skip crucial trials (i.e. testing in a larger number of humans to confirm its effectiveness) and claimed one of his daughters had been jabbed [@abcnews]. All these actions are becuase Russia cannot wait any longer. However, the bad news is covid-19 is mutated along time [@groch]. We don't know whether the vaccine will be still effective in future, even in next month.
 
 
 
