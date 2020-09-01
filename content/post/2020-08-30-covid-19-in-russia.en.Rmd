@@ -39,7 +39,7 @@ The dataset used in this post is from [World Health Organization (WHO)](https://
 ## About Russia
 WHO classifies COVID-19 transmission in Russia as *clusters of cases*. WHO defines clusters of cases as "cases that are clustered in time, geographic location and or by common exposures". 
 
-Russia has 146,748,590 people. It has large country area but only a small proportion of the areas in which people are willing to live. This could be one of reasons of *clusters of cases* in Russia. Table \@ref(tab:tab1) shows the COVID-19 cases reported in Russia since 31st, Jan 2020; we can see that the largest number of new cases was on 27th Apr (12559 new cases on this day). 
+Russia has 146,748,590 people. It has large country area but only a small proportion of the areas in which people are willing to live. This could be one of reasons of *clusters of cases* in Russia. Fig\@ref(fig:tab1) shows the COVID-19 cases reported in Russia since 31st, Jan 2020; we can see that the largest number of new cases was on 27th Apr (12559 new cases on this day). 
 
 
 
@@ -53,7 +53,7 @@ covid_russia <- readr::read_csv(here::here("content/post/_data/WHO-COVID-19-glob
 
 
 
-```{r tab1}
+```{r tab1, fig.cap="COVID-19 cases reported in Russia since 2020-01-31"}
 n <- 146748590
 tab1 <- covid_russia %>% 
   select(-country_code, -country, -who_region)
@@ -63,8 +63,7 @@ tab1 %>%
             colnames = c("Date", "New cases", 
                          "cumulative cases", 
                          "New deaths", 
-                         "Cumulative deaths"),
-            caption = "COVID-19 cases reported in Russia since 2020-01-31") %>% 
+                         "Cumulative deaths")) %>% 
   widgetframe::frameWidget()
 ```
 
@@ -90,12 +89,12 @@ bind_rows(sum_function(2:5,tab1)) %>%
                        "cumulative_cases" = "Cumulative cases",
                        "new_deaths" = "New deaths",
                        "cumulative_deaths" = "Cumulative deaths")) %>% 
-  kable("html",col.names = c("vairble", "min", "Q1", "median", "mean", "Q3", "max")) %>% 
+  kable("html",col.names = c("vairble", "min", "Q1", "median", "mean", "Q3", "max"), caption = "Summary table") %>% 
   kable_styling(bootstrap_options = c("striped", "hover"))
 
 ```
 
-```{r boxplot}
+```{r boxplot, fig.cap = "123"}
 boxplot <- tab1 %>% 
   select(-date_reported) %>% 
   pivot_longer(cols = everything(), names_to = "type", values_to = "cases") %>% 
@@ -109,7 +108,7 @@ ggplotly()
 
 Fig\@ref(fig:lineplot) supports my conclusion above. Some pitfalls in the red line indicates the test results were not reported at these days. 
 
-```{r lineplot}
+```{r lineplot, fig.cap = "455"}
 covid_russia %>% 
   pivot_longer(cols = c(`new_cases`, `new_deaths`), names_to = "new", values_to = "cases") %>% 
   select(date_reported, new, cases) %>% 
@@ -123,7 +122,7 @@ covid_russia %>%
 
 ## My viewpoint
 
-The bad situation in Russia will continue affecting its economy in at least next six months. Russia's economy is vulnerable and Russia government wants eagerly to do their best for reopen their markets. Russia president, Putin, even allowed the coronavirus vaccine to skip crucial trials (i.e. testing in a larger number of humans to confirm its effectiveness) and claimed one of his daughters had been jabbed [@abc]. All these actions are becuase Russia cannot wait any longer. However, the bad news is covid-19 is mutated along time [@groch]. We don't know whether the vaccine will be still effective in future, even in next month.
+The bad situation in Russia will continue affecting its economy in at least next six months. Russia's economy is vulnerable and Russia government wants eagerly to do their best for reopen their markets. Russia president, Putin, even allowed the coronavirus vaccine to skip crucial trials (i.e. testing in a larger number of humans to confirm its effectiveness) and claimed one of his daughters had been jabbed [@abcnews]. All these actions are becuase Russia cannot wait any longer. However, the bad news is covid-19 is mutated along time [@groch]. We don't know whether the vaccine will be still effective in future, even in next month. 
 
 
 
