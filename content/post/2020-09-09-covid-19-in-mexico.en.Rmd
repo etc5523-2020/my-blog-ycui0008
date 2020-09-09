@@ -17,8 +17,17 @@ image:
   focal_point: ''
   preview_only: no
 projects: []
+bibliography: references.bib
 ---
 
+## Data source
+The dataset used in this post is from [World Health Organization (WHO)](https://covid19.who.int/table)[@who].
+
+# Background story
+
+Mexico and the U.S are neighbours. Because the U.S is much more developed than Mexico, there are many illegal immigrants from Mexico go across the border and live and/or work in the U.S.. The drug trafficking in Mexico is notorious. They commit crimes and the government can do little about them. However, surprisingly, during the coronavirus pandemic, criminal cartels provide food to poors and help hospitals procure the necessary equipment [@pazzona]. This strange story occurs mainly because of two reasons. First, the Mexico government does not have the capacity to organise effective operations to help poor people or hospitals. Second, the gangs' income is decreasing due the coronavirus pandemic. So, they eagerly want the society back to normal.
+
+Like the U.S, Mexicocommunity transmission
 
 ```{r setup, include = FALSE}
 knitr::opts_chunk$set(fig.align = 'center',
@@ -31,10 +40,12 @@ library(ggthemes)
 ```
 
 ```{r read-data}
-WHO <- readr::read_csv(here::here("content/post/_data/WHO-COVID-19-09-09-2020.csv"))
+WHO <- readr::read_csv(here::here("content/post/_data/WHO-COVID-19-09-09-2020.csv")) %>% 
+  janitor::clean_names() %>% 
+  filter(country == "Mexico")
 ```
 
-```{r map}
+```{r map, fig.cap = "Mexico and USA"}
 # create a world map
 world <- map_data("world")
 
@@ -67,3 +78,4 @@ ggplot(mexico_usa)+
 
 ```
 
+# References

@@ -84,7 +84,32 @@
       <description>
 
 
-&lt;p&gt;&lt;img src=&#34;/post/2020-09-09-covid-19-in-mexico.en_files/figure-html/map-1.png&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;&lt;/p&gt;
+&lt;div id=&#34;data-source&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Data source&lt;/h2&gt;
+&lt;p&gt;The dataset used in this post is from &lt;a href=&#34;https://covid19.who.int/table&#34;&gt;World Health Organization (WHO)&lt;/a&gt;&lt;span class=&#34;citation&#34;&gt;(WHO 2020)&lt;/span&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;background-story&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Background story&lt;/h1&gt;
+&lt;p&gt;Mexico and the U.S are neighbours. Because the U.S is much more developed than Mexico, there are many illegal immigrants from Mexico go across the border and live and/or work in the U.S.. The drug trafficking in Mexico is notorious. They commit crimes and the government can do little about them. However, surprisingly, during the coronavirus pandemic, criminal cartels provide food to poors and help hospitals procure the necessary equipment &lt;span class=&#34;citation&#34;&gt;(Pazzona 2020)&lt;/span&gt;. This strange story occurs mainly because of two reasons. First, the Mexico government does not have the capacity to organise effective operations to help poor people or hospitals. Second, the gangs’ income is decreasing due the coronavirus pandemic. So, they eagerly want the society back to normal.&lt;/p&gt;
+&lt;p&gt;Like the U.S, Mexicocommunity transmission&lt;/p&gt;
+&lt;div class=&#34;figure&#34; style=&#34;text-align: center&#34;&gt;&lt;span id=&#34;fig:map&#34;&gt;&lt;/span&gt;
+&lt;img src=&#34;/post/2020-09-09-covid-19-in-mexico.en_files/figure-html/map-1.png&#34; alt=&#34;Mexico and USA&#34; width=&#34;672&#34; /&gt;
+&lt;p class=&#34;caption&#34;&gt;
+Figure 1: Mexico and USA
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;references&#34; class=&#34;section level1 unnumbered&#34;&gt;
+&lt;h1&gt;References&lt;/h1&gt;
+&lt;div id=&#34;refs&#34; class=&#34;references&#34;&gt;
+&lt;div id=&#34;ref-pazzona&#34;&gt;
+&lt;p&gt;Pazzona, Matteo. 2020. “Coronavirus: Crime Cartels Helping Communities Will Extract a High Price in Years to Come.” &lt;em&gt;The Conversation&lt;/em&gt;. &lt;a href=&#34;https://theconversation.com/coronavirus-crime-cartels-helping-communities-will-extract-a-high-price-in-years-to-come-138592&#34;&gt;https://theconversation.com/coronavirus-crime-cartels-helping-communities-will-extract-a-high-price-in-years-to-come-138592&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;ref-who&#34;&gt;
+&lt;p&gt;WHO. 2020. “WHO Coronavirus Disease (Covid-19) Dashboard,” August. &lt;a href=&#34;https://covid19.who.int/table&#34;&gt;https://covid19.who.int/table&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
 </description>
     </item>
     
