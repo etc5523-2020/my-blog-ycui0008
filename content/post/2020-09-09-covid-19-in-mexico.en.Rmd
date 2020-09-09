@@ -1,0 +1,69 @@
+---
+title: COVID-19 in Mexico
+author: ''
+date: '2020-09-09'
+slug: covid-19-in-mexico
+categories: []
+tags:
+  - COVID-19
+  - Mexico
+subtitle: ''
+summary: ''
+authors: []
+lastmod: '2020-09-09T16:30:16+10:00'
+featured: no
+image:
+  caption: ''
+  focal_point: ''
+  preview_only: no
+projects: []
+---
+
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(fig.align = 'center',
+                      message = FALSE,
+                      warning = FALSE,
+                      echo = FALSE)
+library(tidyverse)
+library(ggmap)
+library(ggthemes)
+```
+
+```{r read-data}
+WHO <- readr::read_csv(here::here("content/post/_data/WHO-COVID-19-09-09-2020.csv"))
+```
+
+```{r map}
+# create a world map
+world <- map_data("world")
+
+mexico_usa <- world %>% 
+  filter(region %in% c("Mexico", "USA", "Canada", "Cuba"))
+
+mexico <- world %>% 
+  filter(region == "Mexico")
+
+USA <- world %>% 
+  filter(region == "USA")
+
+ggplot(mexico_usa)+
+  geom_map(map = mexico,
+           aes(x = long, y = lat, map_id = region))+
+  geom_map(map = mexico_usa,
+           aes(x = long, y = lat, map_id = region)) +
+  xlim(c(min(mexico_usa$long), -50)) +
+  theme_map() +
+  geom_polygon(data = mexico,
+               aes(x = long,
+                   y = lat,
+                   group = group), color = 'red', fill = 'green') +
+  geom_polygon(data = USA,
+               aes(x = long,
+                   y = lat,
+                   group = group), color = 'red', fill = 'blue') +
+  annotate("label", x = mean(mexico$long), y = mean(mexico$lat), label = "Mexico") +
+  annotate("label", x = mean(mexico$long), y = (mean(mexico$lat)+ 15), label = "USA")
+
+```
+
