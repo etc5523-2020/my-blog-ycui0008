@@ -23,11 +23,11 @@ bibliography: references.bib
 ## Data source
 The dataset used in this post is from [World Health Organization (WHO)](https://covid19.who.int/table)[@who].
 
-# Background story
+## Background story
 
 Mexico and the U.S are neighbours. Because the U.S is much more developed than Mexico, there are many illegal immigrants from Mexico go across the border and live and/or work in the U.S.. The drug trafficking in Mexico is notorious. They commit crimes and the government can do little about them. However, surprisingly, during the coronavirus pandemic, criminal cartels provide food to poors and help hospitals procure the necessary equipment [@pazzona]. This strange story occurs mainly because of two reasons. First, the Mexico government does not have the capacity to organise effective operations to help poor people or hospitals. Second, the gangs' income is decreasing due the coronavirus pandemic. So, they eagerly want the society back to normal.
 
-Like the U.S, the transmission classification in Mexico is community transmission as well. Community transmission means the government lacks capacity to control the coronavirus pandemic or the residents do not follow the rules. 
+Like the U.S, the transmission classification in Mexico is community transmission as well (fig \@ref(fig:map) shows the location of Mexico). Community transmission means the government lacks capacity to control the coronavirus pandemic or the residents do not follow the rules. 
 
 ```{r setup, include = FALSE}
 knitr::opts_chunk$set(fig.align = 'center',
@@ -38,6 +38,9 @@ library(tidyverse)
 library(ggmap)
 library(ggthemes)
 library(gganimate)
+library(DT)
+library(knitr)
+library(plotly)
 ```
 
 
@@ -68,8 +71,35 @@ mexico_usa %>%
 
 ```
 
-```{r}
-knitr::include_graphics("gif/new_cases_and_new_deaths_in_mexico.gif")
+## What does the data tell us
+
+Fig \@ref(fig:tab1) shows the `Date`, `New cases`, `Cumulative cases`, `New deaths`, and `Cumulative deaths` of Mexico. Unlike Russia, the earliest date reported of Mexico was the end of February 2020. The highest daily new cases was 9556 on 3rd Aug 2020. The highest daily new deaths was 1091 on 5th Jun 2020.
+
+Fig \@ref(fig:plot1) shows the red line (`New cases`) increased dramatically after 1st Apr 2020. Daily new deaths is also surprisingly high; until now, the average of `new deaths` is `r mean(WHO$new_deaths)`. So far, Mexico's death toll from the pandemic is the fourth highest globally, and the 13th highest on a per capita basis, according to a tally by Johns Hopkins University [@garcia].
+
+```{r tab1, fig.cap = "COVID-19 cases reported in Mexico since 28-02-2020"}
+WHO %>% 
+  select(-country_code, -country, -who_region) %>% 
+  datatable(options = list(pageLength = 5),
+            colnames = c("Date", "New cases", 
+                         "Cumulative cases", 
+                         "New deaths", 
+                         "Cumulative deaths")) %>% 
+  widgetframe::frameWidget()
+```
+
+```{r plot1, fig.cap = "Daily new cases and new deaths in Mexico"}
+p1 <- WHO %>% 
+  pivot_longer(cols = c("new_cases","cumulative_cases", "new_deaths", "cumulative_deaths"), names_to = "type", values_to = "cases") %>% 
+  mutate(cases = as.numeric(cases)) %>% 
+  filter(type %in% c("new_cases", "new_deaths")) %>% 
+  ggplot(aes(x = date_reported, y = cases, group = type, color = type)) +
+  geom_line() +
+  theme(legend.title = element_blank()) +
+  scale_x_date(date_breaks = "1 month") +
+  xlab("Date reported")
+
+ggplotly()
 ```
 
 # References
