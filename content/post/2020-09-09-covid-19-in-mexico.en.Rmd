@@ -27,7 +27,7 @@ The dataset used in this post is from [World Health Organization (WHO)](https://
 
 Mexico and the U.S are neighbours. Because the U.S is much more developed than Mexico, there are many illegal immigrants from Mexico go across the border and live and/or work in the U.S.. The drug trafficking in Mexico is notorious. They commit crimes and the government can do little about them. However, surprisingly, during the coronavirus pandemic, criminal cartels provide food to poors and help hospitals procure the necessary equipment [@pazzona]. This strange story occurs mainly because of two reasons. First, the Mexico government does not have the capacity to organise effective operations to help poor people or hospitals. Second, the gangs' income is decreasing due the coronavirus pandemic. So, they eagerly want the society back to normal.
 
-Like the U.S, Mexicocommunity transmission
+Like the U.S, the transmission classification in Mexico is community transmission as well. Community transmission means the government lacks capacity to control the coronavirus pandemic or the residents do not follow the rules. 
 
 ```{r setup, include = FALSE}
 knitr::opts_chunk$set(fig.align = 'center',
@@ -37,13 +37,18 @@ knitr::opts_chunk$set(fig.align = 'center',
 library(tidyverse)
 library(ggmap)
 library(ggthemes)
+library(gganimate)
 ```
+
 
 ```{r read-data}
 WHO <- readr::read_csv(here::here("content/post/_data/WHO-COVID-19-09-09-2020.csv")) %>% 
   janitor::clean_names() %>% 
+  # mutate(country = recode(country,
+  #                         "United States of America" = "USA")) %>% 
   filter(country == "Mexico")
 ```
+
 
 ```{r map, fig.cap = "Mexico and USA"}
 # create a world map
@@ -52,30 +57,19 @@ world <- map_data("world")
 mexico_usa <- world %>% 
   filter(region %in% c("Mexico", "USA", "Canada", "Cuba"))
 
-mexico <- world %>% 
-  filter(region == "Mexico")
 
-USA <- world %>% 
-  filter(region == "USA")
-
-ggplot(mexico_usa)+
-  geom_map(map = mexico,
-           aes(x = long, y = lat, map_id = region))+
-  geom_map(map = mexico_usa,
-           aes(x = long, y = lat, map_id = region)) +
+mexico_usa %>% 
+  ggplot(aes(long, lat, group = group))+
   xlim(c(min(mexico_usa$long), -50)) +
   theme_map() +
-  geom_polygon(data = mexico,
-               aes(x = long,
-                   y = lat,
-                   group = group), color = 'red', fill = 'green') +
-  geom_polygon(data = USA,
-               aes(x = long,
-                   y = lat,
-                   group = group), color = 'red', fill = 'blue') +
-  annotate("label", x = mean(mexico$long), y = mean(mexico$lat), label = "Mexico") +
-  annotate("label", x = mean(mexico$long), y = (mean(mexico$lat)+ 15), label = "USA")
+  geom_polygon(color = 'white')+
+  annotate("label", x = -103.598, y = 24.21141, label = "Mexico") +
+  annotate("label", x = -103.598, y = 39.21141, label = "USA")
 
+```
+
+```{r}
+knitr::include_graphics("gif/new_cases_and_new_deaths_in_mexico.gif")
 ```
 
 # References
