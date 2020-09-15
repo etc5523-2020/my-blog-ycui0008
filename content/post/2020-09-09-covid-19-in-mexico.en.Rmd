@@ -21,7 +21,7 @@ bibliography: references.bib
 ---
 
 ## Data source
-The dataset used in this post is from [World Health Organization (WHO)](https://covid19.who.int/table)[@who].
+The dataset used in this post is from [World Health Organization (WHO)](https://covid19.who.int/table)[@who] on 15-09-2020.
 
 ## Background story
 
@@ -37,15 +37,16 @@ knitr::opts_chunk$set(fig.align = 'center',
 library(tidyverse)
 library(ggmap)
 library(ggthemes)
-library(gganimate)
+# library(gganimate)
 library(DT)
 library(knitr)
 library(plotly)
+library(gridExtra)
 ```
 
 
 ```{r read-data}
-WHO <- readr::read_csv(here::here("content/post/_data/WHO-COVID-19-09-09-2020.csv")) %>% 
+WHO <- readr::read_csv(here::here("content/post/_data/WHO-COVID-19-15-09-2020.csv")) %>% 
   janitor::clean_names() %>% 
   # mutate(country = recode(country,
   #                         "United States of America" = "USA")) %>% 
@@ -75,7 +76,10 @@ mexico_usa %>%
 
 Fig \@ref(fig:tab1) shows the `Date`, `New cases`, `Cumulative cases`, `New deaths`, and `Cumulative deaths` of Mexico. Unlike Russia, the earliest date reported of Mexico was the end of February 2020. The highest daily new cases was 9556 on 3rd Aug 2020. The highest daily new deaths was 1091 on 5th Jun 2020.
 
-Fig \@ref(fig:plot1) shows the red line (`New cases`) increased dramatically after 1st Apr 2020. Daily new deaths is also surprisingly high; until now, the average of `new deaths` is `r mean(WHO$new_deaths)`. So far, Mexico's death toll from the pandemic is the fourth highest globally, and the 13th highest on a per capita basis, according to a tally by Johns Hopkins University [@garcia].
+Fig \@ref(fig:plot1) shows the red line (`New cases`) increased dramatically after 1st Apr 2020. Daily new deaths is also surprisingly high; until now, the average of `new deaths` is `r mean(WHO$new_deaths)`. The high `daily new cases` will overwhelming Mexico's hospitals and medical resources. 
+
+Fig \@ref(fig:plot2) shows that Mexico's cumulative cases was at 7th highest globally, but its cumulative deaths was at 4th highest globally. So far, Mexico's death toll from the pandemic is the 13th highest on a per capita basis [@garcia]. According to World Bank database, Mexico's hospital beds (per 1,000 people) was only 1.5 in 2015. As we know, the availability of CCB-ICU beds, mechanical ventilation and ECMO devices are critical for saving lives in the coronavirus pandemic. But the treatment is expensive, as well as the test. According to the World Bank, the poverty headcount ratio at national poverty lines (% of population) of Mexico was 41.9%. This is crucial because even poor people know they are infected, they can't afford the treatment. In addition, because of coronavirus pandemic, people can hardly find a job --- they have no income.
+
 
 ```{r tab1, fig.cap = "COVID-19 cases reported in Mexico since 28-02-2020"}
 WHO %>% 
@@ -101,5 +105,42 @@ p1 <- WHO %>%
 
 ggplotly()
 ```
+
+```{r plot2, fig.cap = "Cumulative cases vs. Cumulative deaths on 15-09-2020"}
+WHO_compare <- readr::read_csv(here::here("content/post/_data/WHO-COVID-19-15-09-2020.csv")) %>% 
+  janitor::clean_names() %>% 
+  select(date_reported, country, cumulative_cases, cumulative_deaths) %>% 
+  filter(date_reported == max(date_reported)) %>% 
+  arrange(-cumulative_cases) %>% 
+  head(8) %>% 
+  mutate(country = recode(country,
+                          "United States of America" = "USA",
+                          "Russian Federation" = "Russia"))
+
+p1 <- WHO_compare %>% 
+  ggplot(aes(x = reorder(country, -cumulative_deaths), y = cumulative_deaths)) +
+  geom_col(fill = 'red') +
+  ggtitle("Cumulative deaths")
+  
+p2 <- WHO_compare %>% 
+  ggplot(aes(x = reorder(country, -cumulative_cases), y = cumulative_cases)) +
+  geom_col(fill = 'blue') +
+  ggtitle("Cumulative cases")
+
+grid.arrange(p1,p2, ncol = 1)
+```
+
+### My viewpoint
+
+The global coronavirus pandemic slows down global ecnomy dramatically in 2020, and the situation may last for years. The control ability and the efficiency of governments and the industrial power of countries are tested in the circumstance. Latin American countries don't have strong industrial base, so they can't manufacture important medical devices by themselves. Most of the medical equipments are imported. The hopital beds per 1000 people is an indicator which represents the ability that a country dealing with the emergency situation like this time. Also, the cooperation of residents is important as well. In order to pass the difficult time, people must follow the instructions of national health department. 
+
+
+
+## Acknowledgements
+The packages used for producing this post are: 
+
+tidyverse [@tidyverse], janitor [@janitor], plotly [@plotly], DT [@DT], knitr [@knitr], readr [@readr], ggmap [@ggmap], ggthemes [@ggthemes], gridExtra [@gridExtra]
+
+The poverty data and hospital bed data are gathered from **the World Bank open data** [@twb]
 
 # References

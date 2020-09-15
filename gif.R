@@ -2,7 +2,6 @@ library(tidyverse)
 library(ggmap)
 library(ggthemes)
 library(gganimate)
-```
 
 
 WHO <- readr::read_csv(here::here("content/post/_data/WHO-COVID-19-09-09-2020.csv")) %>% 
