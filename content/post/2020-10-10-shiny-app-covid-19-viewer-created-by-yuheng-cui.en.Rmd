@@ -1,8 +1,8 @@
 ---
-title: Shiny App -- Covid-19 Viewer (created by Yuheng Cui)
+title: Shiny App -- Covid-19 Viewer
 author: ''
 date: '2020-10-10'
-slug: shiny-app-covid-19-viewer-created-by-yuheng-cui
+slug: shiny-app-covid-19-viewer
 categories: []
 tags:
   - Shiny app
@@ -37,7 +37,7 @@ There are four tabs: `Map`, `Table`, `Graphs`, and `About.
 * `Graphs`: There are one column plot and one line plot in this tab. The column plot help user compare the latest `cumulative_cases` and `cumulative_deaths` of selected countries. The line plot tells user the `new_cases` and `new_deaths` of selected countries. With these two plots, user can understand how successful selected countries control the coronavirus pandemic.
 * `About`: This tab has short introduction about `Covid-19 viewer` and its creator. It also contains the `Acknowledgments` and `References` sections.
 
-You can download this App from [Github](https://github.com/etc5523-2020/shiny-assessment-ycui0008)
+You can download this App from [Github](https://github.com/etc5523-2020/shiny-assessment-ycui0008). 
 
 
 ## Self Review
@@ -48,21 +48,23 @@ First, this is my first time to do shiny, I did a lot of self study and complete
 
 Second, it spends me 3 nights to deal with leaflet output for shiny app. During the process, I have trouble to create circle markers within leaflet maps. Thanks Stuart for helping me solve this problem!
 
-### What are the points you can improve on?
+### What are the points I can improve on?
 
 Loading my leaflet map in the first tab is time-consuming. Every time a user change the slide bar, it would take at least 10 seconds to show the results. 
 
-After completion of my About tab, I know a better way to write texts in shiny. 
+After completion of my About tab, I know a better way to write texts/paragraphs in shiny. 
 
 ### What are some things that I'd like to add that's plausible?
 
-First, I want to make the line plot in Graph tab animated. But I'm not sure whether the 
-Second, ecause it is annoying for App maintainer to update the dataset daily. I want to make users be able to upload csv file in a tab called "Upload file", and the csv file will be processed by the App.
-Third, if I have more time, I would like to create a covid-19 viewer for America. It will show the cases, deaths, new cases and new deaths for each state.
+First, I want to make the line plot in Graph tab animated. The animated plot would look more entertaining.
+
+Second, I want to make users be able to upload csv file in a tab called "Upload file"; after uploading the csv file, the App will draw maps and plots based on the latest dataset. This function can release the app maintainer from updating the covid-19 dataset every day.
+
+
 
 ### What are some things that I'd like to add that cannot be done yet due to limitation in data or technology?
 
-In my plan, the leaflet map will look like the image below, this plot is from [WHO Coronavirus Disease (COVID-19) Dashboard](https://covid19.who.int/). But after several-days tries, I still could not figure it out.
+In my plan, the leaflet map will look like the plot below, this plot is from [WHO Coronavirus Disease (COVID-19) Dashboard](https://covid19.who.int/). But after several-days tries, I still could not figure it out.
 
 <img src="../../img/who-dashboard.png" alt ="" />
 
