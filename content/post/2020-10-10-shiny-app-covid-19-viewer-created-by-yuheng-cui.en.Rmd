@@ -1,0 +1,70 @@
+---
+title: Shiny App -- Covid-19 Viewer (created by Yuheng Cui)
+author: ''
+date: '2020-10-10'
+slug: shiny-app-covid-19-viewer-created-by-yuheng-cui
+categories: []
+tags:
+  - Shiny app
+  - Shiny
+  - COVID-19
+subtitle: ''
+summary: ''
+authors: []
+lastmod: '2020-10-10T16:59:00+11:00'
+featured: no
+image:
+  caption: ''
+  focal_point: ''
+  preview_only: no
+projects: []
+---
+
+```{r setup, include = FALSE}
+
+```
+
+
+
+## Introduce `Covid-19 view`
+
+This App is used to monitor global covid-19 cases and deaths, and it can compare the covid-19 cases in different countries.
+
+There are four tabs: `Map`, `Table`, `Graphs`, and `About.
+
+* `Map`: This tab has two leaflet maps. The first one shows the global `cumulative_cases`. The second one shows the global `cumulative_deaths`. Because the dataset contains huge amount of values, the leaflet maps take much time to run. So, please be patient.
+* `Table`: This tab shows the latest covid-19 `new_cases`, `cumulative_cases`, `new_deaths`, and `cumulative_deaths` of selected countries. User can select multiple countries to compare them.
+* `Graphs`: There are one column plot and one line plot in this tab. The column plot help user compare the latest `cumulative_cases` and `cumulative_deaths` of selected countries. The line plot tells user the `new_cases` and `new_deaths` of selected countries. With these two plots, user can understand how successful selected countries control the coronavirus pandemic.
+* `About`: This tab has short introduction about `Covid-19 viewer` and its creator. It also contains the `Acknowledgments` and `References` sections.
+
+You can download this App from [Github](https://github.com/etc5523-2020/shiny-assessment-ycui0008)
+
+
+## Self Review
+
+### What did I do well
+
+First, this is my first time to do shiny, I did a lot of self study and complete it without any bugs. 
+
+Second, it spends me 3 nights to deal with leaflet output for shiny app. During the process, I have trouble to create circle markers within leaflet maps. Thanks Stuart for helping me solve this problem!
+
+### What are the points you can improve on?
+
+Loading my leaflet map in the first tab is time-consuming. Every time a user change the slide bar, it would take at least 10 seconds to show the results. 
+
+After completion of my About tab, I know a better way to write texts in shiny. 
+
+### What are some things that I'd like to add that's plausible?
+
+First, I want to make the line plot in Graph tab animated. But I'm not sure whether the 
+Second, ecause it is annoying for App maintainer to update the dataset daily. I want to make users be able to upload csv file in a tab called "Upload file", and the csv file will be processed by the App.
+Third, if I have more time, I would like to create a covid-19 viewer for America. It will show the cases, deaths, new cases and new deaths for each state.
+
+### What are some things that I'd like to add that cannot be done yet due to limitation in data or technology?
+
+In my plan, the leaflet map will look like the image below, this plot is from [WHO Coronavirus Disease (COVID-19) Dashboard](https://covid19.who.int/). But after several-days tries, I still could not figure it out.
+
+<img src="../../img/who-dashboard.png" alt ="" />
+
+I also plan to make it available for users to upload csv files by themselves. But after two days, I still cannot solve it.
+

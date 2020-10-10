@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Shiny app | Yuheng&#39;s Blog</title>
+    <link>/tag/shiny-app/</link>
+      <atom:link href="/tag/shiny-app/index.xml" rel="self" type="application/rss+xml" />
+    <description>Shiny app</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sat, 10 Oct 2020 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
+      <title>Shiny app</title>
+      <link>/tag/shiny-app/</link>
+    </image>
+    
+    <item>
+      <title>Shiny App -- Covid-19 Viewer (created by Yuheng Cui)</title>
+      <link>/post/shiny-app-covid-19-viewer-created-by-yuheng-cui/</link>
+      <pubDate>Sat, 10 Oct 2020 00:00:00 +0000</pubDate>
+      <guid>/post/shiny-app-covid-19-viewer-created-by-yuheng-cui/</guid>
+      <description>
+
+
+&lt;div id=&#34;introduce-covid-19-view&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Introduce &lt;code&gt;Covid-19 view&lt;/code&gt;&lt;/h2&gt;
+&lt;p&gt;This App is used to monitor global covid-19 cases and deaths, and it can compare the covid-19 cases in different countries.&lt;/p&gt;
+&lt;p&gt;There are four tabs: &lt;code&gt;Map&lt;/code&gt;, &lt;code&gt;Table&lt;/code&gt;, &lt;code&gt;Graphs&lt;/code&gt;, and `About.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;Map&lt;/code&gt;: This tab has two leaflet maps. The first one shows the global &lt;code&gt;cumulative_cases&lt;/code&gt;. The second one shows the global &lt;code&gt;cumulative_deaths&lt;/code&gt;. Because the dataset contains huge amount of values, the leaflet maps take much time to run. So, please be patient.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Table&lt;/code&gt;: This tab shows the latest covid-19 &lt;code&gt;new_cases&lt;/code&gt;, &lt;code&gt;cumulative_cases&lt;/code&gt;, &lt;code&gt;new_deaths&lt;/code&gt;, and &lt;code&gt;cumulative_deaths&lt;/code&gt; of selected countries. User can select multiple countries to compare them.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Graphs&lt;/code&gt;: There are one column plot and one line plot in this tab. The column plot help user compare the latest &lt;code&gt;cumulative_cases&lt;/code&gt; and &lt;code&gt;cumulative_deaths&lt;/code&gt; of selected countries. The line plot tells user the &lt;code&gt;new_cases&lt;/code&gt; and &lt;code&gt;new_deaths&lt;/code&gt; of selected countries. With these two plots, user can understand how successful selected countries control the coronavirus pandemic.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;About&lt;/code&gt;: This tab has short introduction about &lt;code&gt;Covid-19 viewer&lt;/code&gt; and its creator. It also contains the &lt;code&gt;Acknowledgments&lt;/code&gt; and &lt;code&gt;References&lt;/code&gt; sections.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;You can download this App from &lt;a href=&#34;https://github.com/etc5523-2020/shiny-assessment-ycui0008&#34;&gt;Github&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;self-review&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Self Review&lt;/h2&gt;
+&lt;div id=&#34;what-did-i-do-well&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;What did I do well&lt;/h3&gt;
+&lt;p&gt;First, this is my first time to do shiny, I did a lot of self study and complete it without any bugs.&lt;/p&gt;
+&lt;p&gt;Second, it spends me 3 nights to deal with leaflet output for shiny app. During the process, I have trouble to create circle markers within leaflet maps. Thanks Stuart for helping me solve this problem!&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;what-are-the-points-you-can-improve-on&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;What are the points you can improve on?&lt;/h3&gt;
+&lt;p&gt;Loading my leaflet map in the first tab is time-consuming. Every time a user change the slide bar, it would take at least 10 seconds to show the results.&lt;/p&gt;
+&lt;p&gt;After completion of my About tab, I know a better way to write texts in shiny.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;what-are-some-things-that-id-like-to-add-thats-plausible&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;What are some things that I’d like to add that’s plausible?&lt;/h3&gt;
+&lt;p&gt;First, I want to make the line plot in Graph tab animated. But I’m not sure whether the
+Second, ecause it is annoying for App maintainer to update the dataset daily. I want to make users be able to upload csv file in a tab called “Upload file”, and the csv file will be processed by the App.
+Third, if I have more time, I would like to create a covid-19 viewer for America. It will show the cases, deaths, new cases and new deaths for each state.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;what-are-some-things-that-id-like-to-add-that-cannot-be-done-yet-due-to-limitation-in-data-or-technology&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;What are some things that I’d like to add that cannot be done yet due to limitation in data or technology?&lt;/h3&gt;
+&lt;p&gt;In my plan, the leaflet map will look like the image below, this plot is from &lt;a href=&#34;https://covid19.who.int/&#34;&gt;WHO Coronavirus Disease (COVID-19) Dashboard&lt;/a&gt;. But after several-days tries, I still could not figure it out.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../img/who-dashboard.png&#34; alt =&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;I also plan to make it available for users to upload csv files by themselves. But after two days, I still cannot solve it.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
