@@ -30,12 +30,39 @@ User can install the released version of `covid19ViewerShiny` from [GitHub](http
 devtools::install_github("etc5523-2020/r-package-assessment-ycui0008")
 ```
 
-Here is the [link](https://etc5523-2020.github.io/r-package-assessment-ycui0008/) of the full instruction of the package.
+Here is the [link](https://etc5523-2020.github.io/r-package-assessment-ycui0008/) to the full instruction of the package.
 
 
 ## What does the package do
 
-Its goal is to monitor global covid-19 cases and deaths, and it can compare the covid-19 cases in different countries. 
+Its goal is to monitor global covid-19 cases and deaths, and it can compare the covid-19 cases in different countries. However, there is an error in `Graph` tab of the Shiny app --- two column plots won't change when users select different countries. In my plan, column plots will change as well as the line plot beneath them.
+
+
+## Possible improvements
+
+### 1. shiny app package
+
+The Shiny app needs to process large dataset, because the dataset contains map data. This is the main reason why the `Map` tab of the Shiny app takes long time to render the leaflet map. If I can find a way to reduce the size of the dataset, or use two datasets to render the leaflet maps, the running time will be reduced.
+
+### 2. documentation
+
+I have trouble when I did documentation for `server.R`. I could not pass CMD check because of `@example`. I had to delete the example for that function. If I got more time, I may fix this issue. And I can enrich the description part in my documentation.
+
+### 3. refactor
+
+Refactoring gives me a few days of nightmare. First, I tried to convert my render functions into functions but it's more difficult than I thought. It give me a bunch of errors which I was not able to fix. It seems that `input` in the shiny app is a special variable which cannot be set as an argument in a function like other variable inputs. Taking long story short, consequently, I transform my code that draws column plot into function. 
+
+
+### 4. `test_that` function
+
+There are many different `expect_` function, but in my package, I use `expect_error` too many time. Next time. I could learn more about other `expect_` functions. Also, I can use some `ArgumentCheck::addError` in my function part to connect functions to unit test.
+
+
+## What I learned from reviewing the package
+
+I understand that making packages is not only create functions but also debugging, testing and documentation. Good documentation can help users know how to use your package, which is helpful for promoting the package. Writing good functions and adequate documentation is main parts of writing a package, but pretty `pkgdown` website is also important for starters of package users.
+
+
 
 ## Package Review
 

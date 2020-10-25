@@ -372,24 +372,48 @@ summary {
 
 <div id="overview-of-the-package-covid19viewershiny" class="section level2">
 <h2>Overview of the package — <code>covid19ViewerShiny</code></h2>
-<p>The package is called <code>covid19ViewerShiny</code>.</p>
+<p>The package written by <em>Yuheng Cui</em> is called <code>covid19ViewerShiny</code>.</p>
 <p>User can install the released version of <code>covid19ViewerShiny</code> from <a href="https://github.com/etc5523-2020/r-package-assessment-ycui0008">GitHub</a> with:</p>
 <pre class="r"><code># install.packages(&quot;devtools&quot;)
 devtools::install_github(&quot;etc5523-2020/r-package-assessment-ycui0008&quot;)</code></pre>
-<p>Here is the <a href="https://etc5523-2020.github.io/r-package-assessment-ycui0008/">link</a> of the full instruction of the package.</p>
+<p>Here is the <a href="https://etc5523-2020.github.io/r-package-assessment-ycui0008/">link</a> to the full instruction of the package.</p>
 </div>
 <div id="what-does-the-package-do" class="section level2">
 <h2>What does the package do</h2>
-<p>Its goal is to monitor global covid-19 cases and deaths, and it can compare the covid-19 cases in different countries.</p>
+<p>Its goal is to monitor global covid-19 cases and deaths, and it can compare the covid-19 cases in different countries. However, there is an error in <code>Graph</code> tab of the Shiny app — two column plots won’t change when users select different countries. In my plan, column plots will change as well as the line plot beneath them.</p>
+</div>
+<div id="possible-improvements" class="section level2">
+<h2>Possible improvements</h2>
+<div id="shiny-app-package" class="section level3">
+<h3>1. shiny app package</h3>
+<p>The Shiny app needs to process large dataset, because the dataset contains map data. This is the main reason why the <code>Map</code> tab of the Shiny app takes long time to render the leaflet map. If I can find a way to reduce the size of the dataset, or use two datasets to render the leaflet maps, the running time will be reduced.</p>
+</div>
+<div id="documentation" class="section level3">
+<h3>2. documentation</h3>
+<p>I have trouble when I did documentation for <code>server.R</code>. I could not pass CMD check because of <code>@example</code>. I had to delete the example for that function. If I got more time, I may fix this issue. And I can enrich the description part in my documentation.</p>
+</div>
+<div id="refactor" class="section level3">
+<h3>3. refactor</h3>
+<p>Refactoring gives me a few days of nightmare. First, I tried to convert my render functions into functions but it’s more difficult than I thought. It give me a bunch of errors which I was not able to fix. It seems that <code>input</code> in the shiny app is a special variable which cannot be set as an argument in a function like other variable inputs. Taking long story short, consequently, I transform my code that draws column plot into function.</p>
+</div>
+<div id="test_that-function" class="section level3">
+<h3>4. <code>test_that</code> function</h3>
+<p>There are many different <code>expect_</code> function, but in my package, I use <code>expect_error</code> too many time. Next time. I could learn more about other <code>expect_</code> functions. Also, I can use some <code>ArgumentCheck::addError</code> in my function part to connect functions to unit test.</p>
+</div>
+</div>
+<div id="what-i-learned-from-reviewing-the-package" class="section level2">
+<h2>What I learned from reviewing the package</h2>
+<p>I understand that making packages is not only create functions but also debugging, testing and documentation. Good documentation can help users know how to use your package, which is helpful for promoting the package. Writing good functions and adequate documentation is main parts of writing a package, but pretty <code>pkgdown</code> website is also important for starters of package users.</p>
 </div>
 <div id="package-review" class="section level2">
 <h2>Package Review</h2>
 <p><em>Please check off boxes as applicable, and elaborate in comments below.</em></p>
-<div id="documentation" class="section level4">
+<div id="documentation-1" class="section level4">
 <h4>Documentation</h4>
 <p>The package includes all the following forms of documentation:</p>
 <ul>
-<li>[yes] <strong>Installation instructions:</strong> for the package is found in README</li>
+<li><input type="checkbox" disabled></input>
+<strong>Installation instructions:</strong> for the package is found in README</li>
 <li><input type="checkbox" disabled></input>
 <strong>Vignette(s)</strong> demonstrating major functionality that runs successfully locally</li>
 <li><input type="checkbox" disabled></input>
