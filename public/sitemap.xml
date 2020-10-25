@@ -33,17 +33,32 @@
   </url>
   
   <url>
-    <loc>/tag/covid-19/</loc>
-    <lastmod>2020-10-10T16:59:00+11:00</lastmod>
+    <loc>/tag/package/</loc>
+    <lastmod>2020-10-25T19:20:07+11:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/package-review/</loc>
+    <lastmod>2020-10-25T19:20:07+11:00</lastmod>
   </url>
   
   <url>
     <loc>/post/</loc>
-    <lastmod>2020-10-10T16:59:00+11:00</lastmod>
+    <lastmod>2020-10-25T19:20:07+11:00</lastmod>
   </url>
   
   <url>
     <loc>/tag/shiny/</loc>
+    <lastmod>2020-10-25T19:20:07+11:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/</loc>
+    <lastmod>2020-10-25T19:20:07+11:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tag/covid-19/</loc>
     <lastmod>2020-10-10T16:59:00+11:00</lastmod>
   </url>
   
@@ -54,11 +69,6 @@
   
   <url>
     <loc>/post/shiny-app-covid-19-viewer/</loc>
-    <lastmod>2020-10-10T16:59:00+11:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/</loc>
     <lastmod>2020-10-10T16:59:00+11:00</lastmod>
   </url>
   
