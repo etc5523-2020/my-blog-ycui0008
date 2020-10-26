@@ -30,9 +30,9 @@
   
     
   
-  <meta name="description" content="Overview of the package — covid19ViewerShinyThe package written by Yuheng Cui is called covid19ViewerShiny.
-User can install the released version of covid19ViewerShiny from GitHub with:
-# install.packages(&quot;devtools&quot;)devtools::install_github(&quot;etc5523-2020/r-package-assessment-ycui0008&quot;)Here is the link to the full instruction of the package.">
+  <meta name="description" content="Overview of the package — AustraliaCOVID19The package written by Yiwen Liu is called AustraliaCOVID19.
+User can install the released version of AustraliaCOVID19 from GitHub with:
+# install.packages(&quot;devtools&quot;)devtools::install_github(&quot;etc5523-2020/r-package-assessment-yliu0320&quot;)What does the package doThe goal of AustraliaCOVID19 is to see the coronavirus data of daily cases and cumulative cases of different types in different states of Australia between 2020-01-12 to 2020-10-02.">
 
   
   <link rel="alternate" hreflang="en-us" href="/post/package-review/">
@@ -258,9 +258,9 @@ User can install the released version of covid19ViewerShiny from GitHub with:
   <meta property="og:site_name" content="Yuheng&#39;s Blog">
   <meta property="og:url" content="/post/package-review/">
   <meta property="og:title" content="Package Review | Yuheng&#39;s Blog">
-  <meta property="og:description" content="Overview of the package — covid19ViewerShinyThe package written by Yuheng Cui is called covid19ViewerShiny.
-User can install the released version of covid19ViewerShiny from GitHub with:
-# install.packages(&quot;devtools&quot;)devtools::install_github(&quot;etc5523-2020/r-package-assessment-ycui0008&quot;)Here is the link to the full instruction of the package."><meta property="og:image" content="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png">
+  <meta property="og:description" content="Overview of the package — AustraliaCOVID19The package written by Yiwen Liu is called AustraliaCOVID19.
+User can install the released version of AustraliaCOVID19 from GitHub with:
+# install.packages(&quot;devtools&quot;)devtools::install_github(&quot;etc5523-2020/r-package-assessment-yliu0320&quot;)What does the package doThe goal of AustraliaCOVID19 is to see the coronavirus data of daily cases and cumulative cases of different types in different states of Australia between 2020-01-12 to 2020-10-02."><meta property="og:image" content="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png">
   <meta property="twitter:image" content="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png"><meta property="og:locale" content="en-us">
   
     
@@ -310,7 +310,7 @@ User can install the released version of covid19ViewerShiny from GitHub with:
       "url": "/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_192x192_fill_lanczos_center_2.png"
     }
   },
-  "description": "Overview of the package — covid19ViewerShiny\rThe package written by Yuheng Cui is called covid19ViewerShiny.\nUser can install the released version of covid19ViewerShiny from GitHub with:\n# install.packages(\u0026quot;devtools\u0026quot;)\rdevtools::install_github(\u0026quot;etc5523-2020/r-package-assessment-ycui0008\u0026quot;)\rHere is the link to the full instruction of the package."
+  "description": "Overview of the package — AustraliaCOVID19\rThe package written by Yiwen Liu is called AustraliaCOVID19.\nUser can install the released version of AustraliaCOVID19 from GitHub with:\n# install.packages(\u0026quot;devtools\u0026quot;)\rdevtools::install_github(\u0026quot;etc5523-2020/r-package-assessment-yliu0320\u0026quot;)\r\rWhat does the package do\rThe goal of AustraliaCOVID19 is to see the coronavirus data of daily cases and cumulative cases of different types in different states of Australia between 2020-01-12 to 2020-10-02."
 }
 </script>
 
@@ -584,7 +584,7 @@ User can install the released version of covid19ViewerShiny from GitHub with:
   
   <span class="middot-divider"></span>
   <span class="article-reading-time">
-    3 min read
+    2 min read
   </span>
   
 
@@ -623,45 +623,52 @@ User can install the released version of covid19ViewerShiny from GitHub with:
       
 
 
-<div id="overview-of-the-package-covid19viewershiny" class="section level2">
-<h2>Overview of the package — <code>covid19ViewerShiny</code></h2>
-<p>The package written by <em>Yuheng Cui</em> is called <code>covid19ViewerShiny</code>.</p>
-<p>User can install the released version of <code>covid19ViewerShiny</code> from <a href="https://github.com/etc5523-2020/r-package-assessment-ycui0008">GitHub</a> with:</p>
+<div id="overview-of-the-package-australiacovid19" class="section level2">
+<h2>Overview of the package — <code>AustraliaCOVID19</code></h2>
+<p>The package written by <em>Yiwen Liu</em> is called <code>AustraliaCOVID19</code>.</p>
+<p>User can install the released version of <code>AustraliaCOVID19</code> from <a href="%22etc5523-2020/r-package-assessment-yliu0320%22">GitHub</a> with:</p>
 <pre class="r"><code># install.packages(&quot;devtools&quot;)
-devtools::install_github(&quot;etc5523-2020/r-package-assessment-ycui0008&quot;)</code></pre>
-<p>Here is the <a href="https://etc5523-2020.github.io/r-package-assessment-ycui0008/">link</a> to the full instruction of the package.</p>
+devtools::install_github(&quot;etc5523-2020/r-package-assessment-yliu0320&quot;)</code></pre>
 </div>
 <div id="what-does-the-package-do" class="section level2">
 <h2>What does the package do</h2>
-<p>Its goal is to monitor global covid-19 cases and deaths, and it can compare the covid-19 cases in different countries. However, there is an error in <code>Graph</code> tab of the Shiny app — two column plots won’t change when users select different countries. In my plan, column plots will change as well as the line plot beneath them.</p>
+<p>The goal of AustraliaCOVID19 is to see the coronavirus data of daily cases and cumulative cases of different types in different states of Australia between 2020-01-12 to 2020-10-02. Besides,the shiny app in this package will give people the whole information about the data with the interactive plots and table.</p>
 </div>
 <div id="possible-improvements" class="section level2">
 <h2>Possible improvements</h2>
-<div id="shiny-app-package" class="section level3">
-<h3>1. shiny app package</h3>
-<p>The Shiny app needs to process large dataset, because the dataset contains map data. This is the main reason why the <code>Map</code> tab of the Shiny app takes long time to render the leaflet map. If I can find a way to reduce the size of the dataset, or use two datasets to render the leaflet maps, the running time will be reduced.</p>
+<div id="pkgdown-website" class="section level3">
+<h3>1. pkgdown website</h3>
+<p>The package does have a pkgdown website and pass the <code>pkgdown check</code> in <code>Action</code> tab, but author forgets to set the GitHub Pages setting to correct source. Anyway, I create the pkgdown website by myself. The website is clear and gives some example of how to use the Shiny App. The possible improvements could be don’t forget to change the GitHub setting next time 😄.</p>
 </div>
-<div id="documentation" class="section level3">
-<h3>2. documentation</h3>
-<p>I have trouble when I did documentation for <code>server.R</code>. I could not pass CMD check because of <code>@example</code>. I had to delete the example for that function. If I got more time, I may fix this issue. And I can enrich the description part in my documentation.</p>
+<div id="documentation-and-readme.md" class="section level3">
+<h3>2. documentation and README.md</h3>
+<p>They are all clear and readable. The possible improvement could be enriching them in the future by adding more details.</p>
 </div>
 <div id="refactor" class="section level3">
 <h3>3. refactor</h3>
-<p>Refactoring gives me a few days of nightmare. First, I tried to convert my render functions into functions but it’s more difficult than I thought. It give me a bunch of errors which I was not able to fix. It seems that <code>input</code> in the shiny app is a special variable which cannot be set as an argument in a function like other variable inputs. Taking long story short, consequently, I transform my code that draws column plot into function.</p>
+<p>Refactor functions are simple but effective, which are good. The possible improvement could be that Yiwen can try to refactor some more complicated functions in the future.</p>
 </div>
 <div id="test_that-function" class="section level3">
 <h3>4. <code>test_that</code> function</h3>
-<p>There are many different <code>expect_</code> function, but in my package, I use <code>expect_error</code> too many time. Next time. I could learn more about other <code>expect_</code> functions. Also, I can use some <code>ArgumentCheck::addError</code> in my function part to connect functions to unit test.</p>
+<p>There is only on unit test. I hope there should be more in the future.</p>
+<pre class="r"><code>test_that(&quot;check the date range&quot;, {
+  expect_error(dateselection(starttime&gt;endtime))
+  
+})</code></pre>
+</div>
+<div id="shiny-app" class="section level3">
+<h3>5. Shiny app</h3>
+<p>All plots within the Shiny app are interactive and functional. And the Shiny has clear UI and understandable plots. The possible improvement could be adding more tabs in the Shiny app, in order to make the whole Shiny app page fit to user’s screen.</p>
 </div>
 </div>
 <div id="what-i-learned-from-reviewing-the-package" class="section level2">
 <h2>What I learned from reviewing the package</h2>
-<p>I understand that making packages is not only create functions but also debugging, testing and documentation. Good documentation can help users know how to use your package, which is helpful for promoting the package. Writing good functions and adequate documentation is main parts of writing a package, but pretty <code>pkgdown</code> website is also important for starters of package users.</p>
+<p>It is funny to review other’s package. It gives me another feeling. It’s not enough to just ensure the package passing all the test. I know the importance of documentation.</p>
 </div>
 <div id="package-review" class="section level2">
 <h2>Package Review</h2>
 <p><em>Please check off boxes as applicable, and elaborate in comments below.</em></p>
-<div id="documentation-1" class="section level4">
+<div id="documentation" class="section level4">
 <h4>Documentation</h4>
 <p>The package includes all the following forms of documentation:</p>
 <ul>

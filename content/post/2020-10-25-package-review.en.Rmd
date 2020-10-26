@@ -19,48 +19,60 @@ image:
 projects: []
 ---
 
-## Overview of the package --- `covid19ViewerShiny`
+## Overview of the package --- `AustraliaCOVID19`
 
-The package written by *Yuheng Cui* is called `covid19ViewerShiny`.
+The package written by *Yiwen Liu* is called `AustraliaCOVID19`.
 
-User can install the released version of `covid19ViewerShiny` from [GitHub](https://github.com/etc5523-2020/r-package-assessment-ycui0008) with:
+User can install the released version of `AustraliaCOVID19` from [GitHub]("etc5523-2020/r-package-assessment-yliu0320") with:
 
 ``` r
 # install.packages("devtools")
-devtools::install_github("etc5523-2020/r-package-assessment-ycui0008")
+devtools::install_github("etc5523-2020/r-package-assessment-yliu0320")
 ```
-
-Here is the [link](https://etc5523-2020.github.io/r-package-assessment-ycui0008/) to the full instruction of the package.
 
 
 ## What does the package do
 
-Its goal is to monitor global covid-19 cases and deaths, and it can compare the covid-19 cases in different countries. However, there is an error in `Graph` tab of the Shiny app --- two column plots won't change when users select different countries. In my plan, column plots will change as well as the line plot beneath them.
+The goal of AustraliaCOVID19 is to see the coronavirus data of daily cases and cumulative cases of different types in different states of Australia between 2020-01-12 to 2020-10-02. Besides,the shiny app in this package will give people the whole information about the data with the interactive plots and table.
+
+
 
 
 ## Possible improvements
 
-### 1. shiny app package
+### 1. pkgdown website
 
-The Shiny app needs to process large dataset, because the dataset contains map data. This is the main reason why the `Map` tab of the Shiny app takes long time to render the leaflet map. If I can find a way to reduce the size of the dataset, or use two datasets to render the leaflet maps, the running time will be reduced.
+The package does have a pkgdown website and pass the `pkgdown check` in `Action` tab, but author forgets to set the GitHub Pages setting to correct source. Anyway, I create the pkgdown website by myself. The website is clear and gives some example of how to use the Shiny App. The possible improvements could be don't forget to change the GitHub setting next time `r emo::ji("smile")`.
+ 
 
-### 2. documentation
+### 2. documentation and README.md
 
-I have trouble when I did documentation for `server.R`. I could not pass CMD check because of `@example`. I had to delete the example for that function. If I got more time, I may fix this issue. And I can enrich the description part in my documentation.
+They are all clear and readable. The possible improvement could be enriching them in the future by adding more details.
 
 ### 3. refactor
 
-Refactoring gives me a few days of nightmare. First, I tried to convert my render functions into functions but it's more difficult than I thought. It give me a bunch of errors which I was not able to fix. It seems that `input` in the shiny app is a special variable which cannot be set as an argument in a function like other variable inputs. Taking long story short, consequently, I transform my code that draws column plot into function. 
+Refactor functions are simple but effective, which are good. The possible improvement could be that Yiwen can try to refactor some more complicated functions in the future.
 
 
 ### 4. `test_that` function
 
-There are many different `expect_` function, but in my package, I use `expect_error` too many time. Next time. I could learn more about other `expect_` functions. Also, I can use some `ArgumentCheck::addError` in my function part to connect functions to unit test.
+There is only on unit test. I hope there should be more in the future.
+
+```r
+test_that("check the date range", {
+  expect_error(dateselection(starttime>endtime))
+  
+})
+```
+
+### 5. Shiny app
+
+All plots within the Shiny app are interactive and functional. And the Shiny has clear UI and understandable plots. The possible improvement could be adding more tabs in the Shiny app, in order to make the whole Shiny app page fit to user's screen.
 
 
 ## What I learned from reviewing the package
 
-I understand that making packages is not only create functions but also debugging, testing and documentation. Good documentation can help users know how to use your package, which is helpful for promoting the package. Writing good functions and adequate documentation is main parts of writing a package, but pretty `pkgdown` website is also important for starters of package users.
+It is funny to review other's package. It gives me another feeling. It's not enough to just ensure the package passing all the test. I know the importance of documentation. 
 
 
 

@@ -84,45 +84,52 @@
       <description>
 
 
-&lt;div id=&#34;overview-of-the-package-covid19viewershiny&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;Overview of the package — &lt;code&gt;covid19ViewerShiny&lt;/code&gt;&lt;/h2&gt;
-&lt;p&gt;The package written by &lt;em&gt;Yuheng Cui&lt;/em&gt; is called &lt;code&gt;covid19ViewerShiny&lt;/code&gt;.&lt;/p&gt;
-&lt;p&gt;User can install the released version of &lt;code&gt;covid19ViewerShiny&lt;/code&gt; from &lt;a href=&#34;https://github.com/etc5523-2020/r-package-assessment-ycui0008&#34;&gt;GitHub&lt;/a&gt; with:&lt;/p&gt;
+&lt;div id=&#34;overview-of-the-package-australiacovid19&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Overview of the package — &lt;code&gt;AustraliaCOVID19&lt;/code&gt;&lt;/h2&gt;
+&lt;p&gt;The package written by &lt;em&gt;Yiwen Liu&lt;/em&gt; is called &lt;code&gt;AustraliaCOVID19&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;User can install the released version of &lt;code&gt;AustraliaCOVID19&lt;/code&gt; from &lt;a href=&#34;%22etc5523-2020/r-package-assessment-yliu0320%22&#34;&gt;GitHub&lt;/a&gt; with:&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# install.packages(&amp;quot;devtools&amp;quot;)
-devtools::install_github(&amp;quot;etc5523-2020/r-package-assessment-ycui0008&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Here is the &lt;a href=&#34;https://etc5523-2020.github.io/r-package-assessment-ycui0008/&#34;&gt;link&lt;/a&gt; to the full instruction of the package.&lt;/p&gt;
+devtools::install_github(&amp;quot;etc5523-2020/r-package-assessment-yliu0320&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;div id=&#34;what-does-the-package-do&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;What does the package do&lt;/h2&gt;
-&lt;p&gt;Its goal is to monitor global covid-19 cases and deaths, and it can compare the covid-19 cases in different countries. However, there is an error in &lt;code&gt;Graph&lt;/code&gt; tab of the Shiny app — two column plots won’t change when users select different countries. In my plan, column plots will change as well as the line plot beneath them.&lt;/p&gt;
+&lt;p&gt;The goal of AustraliaCOVID19 is to see the coronavirus data of daily cases and cumulative cases of different types in different states of Australia between 2020-01-12 to 2020-10-02. Besides,the shiny app in this package will give people the whole information about the data with the interactive plots and table.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div id=&#34;possible-improvements&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Possible improvements&lt;/h2&gt;
-&lt;div id=&#34;shiny-app-package&#34; class=&#34;section level3&#34;&gt;
-&lt;h3&gt;1. shiny app package&lt;/h3&gt;
-&lt;p&gt;The Shiny app needs to process large dataset, because the dataset contains map data. This is the main reason why the &lt;code&gt;Map&lt;/code&gt; tab of the Shiny app takes long time to render the leaflet map. If I can find a way to reduce the size of the dataset, or use two datasets to render the leaflet maps, the running time will be reduced.&lt;/p&gt;
+&lt;div id=&#34;pkgdown-website&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;1. pkgdown website&lt;/h3&gt;
+&lt;p&gt;The package does have a pkgdown website and pass the &lt;code&gt;pkgdown check&lt;/code&gt; in &lt;code&gt;Action&lt;/code&gt; tab, but author forgets to set the GitHub Pages setting to correct source. Anyway, I create the pkgdown website by myself. The website is clear and gives some example of how to use the Shiny App. The possible improvements could be don’t forget to change the GitHub setting next time 😄.&lt;/p&gt;
 &lt;/div&gt;
-&lt;div id=&#34;documentation&#34; class=&#34;section level3&#34;&gt;
-&lt;h3&gt;2. documentation&lt;/h3&gt;
-&lt;p&gt;I have trouble when I did documentation for &lt;code&gt;server.R&lt;/code&gt;. I could not pass CMD check because of &lt;code&gt;@example&lt;/code&gt;. I had to delete the example for that function. If I got more time, I may fix this issue. And I can enrich the description part in my documentation.&lt;/p&gt;
+&lt;div id=&#34;documentation-and-readme.md&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;2. documentation and README.md&lt;/h3&gt;
+&lt;p&gt;They are all clear and readable. The possible improvement could be enriching them in the future by adding more details.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div id=&#34;refactor&#34; class=&#34;section level3&#34;&gt;
 &lt;h3&gt;3. refactor&lt;/h3&gt;
-&lt;p&gt;Refactoring gives me a few days of nightmare. First, I tried to convert my render functions into functions but it’s more difficult than I thought. It give me a bunch of errors which I was not able to fix. It seems that &lt;code&gt;input&lt;/code&gt; in the shiny app is a special variable which cannot be set as an argument in a function like other variable inputs. Taking long story short, consequently, I transform my code that draws column plot into function.&lt;/p&gt;
+&lt;p&gt;Refactor functions are simple but effective, which are good. The possible improvement could be that Yiwen can try to refactor some more complicated functions in the future.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div id=&#34;test_that-function&#34; class=&#34;section level3&#34;&gt;
 &lt;h3&gt;4. &lt;code&gt;test_that&lt;/code&gt; function&lt;/h3&gt;
-&lt;p&gt;There are many different &lt;code&gt;expect_&lt;/code&gt; function, but in my package, I use &lt;code&gt;expect_error&lt;/code&gt; too many time. Next time. I could learn more about other &lt;code&gt;expect_&lt;/code&gt; functions. Also, I can use some &lt;code&gt;ArgumentCheck::addError&lt;/code&gt; in my function part to connect functions to unit test.&lt;/p&gt;
+&lt;p&gt;There is only on unit test. I hope there should be more in the future.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;test_that(&amp;quot;check the date range&amp;quot;, {
+  expect_error(dateselection(starttime&amp;gt;endtime))
+  
+})&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;shiny-app&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;5. Shiny app&lt;/h3&gt;
+&lt;p&gt;All plots within the Shiny app are interactive and functional. And the Shiny has clear UI and understandable plots. The possible improvement could be adding more tabs in the Shiny app, in order to make the whole Shiny app page fit to user’s screen.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div id=&#34;what-i-learned-from-reviewing-the-package&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;What I learned from reviewing the package&lt;/h2&gt;
-&lt;p&gt;I understand that making packages is not only create functions but also debugging, testing and documentation. Good documentation can help users know how to use your package, which is helpful for promoting the package. Writing good functions and adequate documentation is main parts of writing a package, but pretty &lt;code&gt;pkgdown&lt;/code&gt; website is also important for starters of package users.&lt;/p&gt;
+&lt;p&gt;It is funny to review other’s package. It gives me another feeling. It’s not enough to just ensure the package passing all the test. I know the importance of documentation.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div id=&#34;package-review&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Package Review&lt;/h2&gt;
 &lt;p&gt;&lt;em&gt;Please check off boxes as applicable, and elaborate in comments below.&lt;/em&gt;&lt;/p&gt;
-&lt;div id=&#34;documentation-1&#34; class=&#34;section level4&#34;&gt;
+&lt;div id=&#34;documentation&#34; class=&#34;section level4&#34;&gt;
 &lt;h4&gt;Documentation&lt;/h4&gt;
 &lt;p&gt;The package includes all the following forms of documentation:&lt;/p&gt;
 &lt;ul&gt;
