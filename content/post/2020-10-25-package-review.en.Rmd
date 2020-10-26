@@ -1,5 +1,5 @@
 ---
-title: Package Review
+title: Package Review --- `AustraliaCOVID19`
 author: Yuheng Cui
 date: '2020-10-25'
 slug: package-review
@@ -72,7 +72,7 @@ All plots within the Shiny app are interactive and functional. And the Shiny has
 
 ## What I learned from reviewing the package
 
-It is funny to review other's package. It gives me another feeling. It's not enough to just ensure the package passing all the test. I know the importance of documentation. 
+It is funny to review other's package. I understand it's not enough to just ensure the package passing all the test. I also realise the importance of documentation. Good documentation can promote the package, teach users how to use the package, and inspire others  while poor documentation will confuse users.
 
 
 
@@ -94,5 +94,4 @@ The package includes all the following forms of documentation:
 
 - [ ] **Installation:** Installation succeeds as documented.
 - [ ] **Functionality:** Any functional claims of the software been confirmed.
-- [ ] **Automated tests:** Unit tests cover essential functions of the package
-and a reasonable range of inputs and conditions. All tests pass on the local machine.
+- [ ] **Automated tests:** Unit tests cover essential functions of the package and a reasonable range of inputs and conditions. All tests pass on the local machine.
