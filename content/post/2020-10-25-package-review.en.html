@@ -36,28 +36,28 @@ devtools::install_github(&quot;etc5523-2020/r-package-assessment-yliu0320&quot;)
 </div>
 <div id="possible-improvements" class="section level2">
 <h2>Possible improvements</h2>
-<div id="pkgdown-website" class="section level3">
-<h3>1. pkgdown website</h3>
+<div id="pkgdown-website" class="section level4">
+<h4>1. pkgdown website</h4>
 <p>The package does have a pkgdown website and pass the <code>pkgdown check</code> in <code>Action</code> tab, but author forgets to set the GitHub Pages setting to correct source. Anyway, I create the pkgdown website by myself. The website is clear and gives some example of how to use the Shiny App. The possible improvements could be don’t forget to change the GitHub setting next time 😄.</p>
 </div>
-<div id="documentation-and-readme.md" class="section level3">
-<h3>2. documentation and README.md</h3>
+<div id="documentation-and-readme.md" class="section level4">
+<h4>2. documentation and README.md</h4>
 <p>They are all clear and readable. The possible improvement could be enriching them in the future by adding more details.</p>
 </div>
-<div id="refactor" class="section level3">
-<h3>3. refactor</h3>
+<div id="refactor" class="section level4">
+<h4>3. refactor</h4>
 <p>Refactor functions are simple but effective, which are good. The possible improvement could be that Yiwen can try to refactor some more complicated functions in the future.</p>
 </div>
-<div id="test_that-function" class="section level3">
-<h3>4. <code>test_that</code> function</h3>
+<div id="test_that-function" class="section level4">
+<h4>4. <code>test_that</code> function</h4>
 <p>There is only on unit test. I hope there should be more in the future.</p>
 <pre class="r"><code>test_that(&quot;check the date range&quot;, {
   expect_error(dateselection(starttime&gt;endtime))
   
 })</code></pre>
 </div>
-<div id="shiny-app" class="section level3">
-<h3>5. Shiny app</h3>
+<div id="shiny-app" class="section level4">
+<h4>5. Shiny app</h4>
 <p>All plots within the Shiny app are interactive and functional. And the Shiny has clear UI and understandable plots. The possible improvement could be adding more tabs in the Shiny app, in order to make the whole Shiny app page fit to user’s screen.</p>
 </div>
 </div>
@@ -72,24 +72,24 @@ devtools::install_github(&quot;etc5523-2020/r-package-assessment-yliu0320&quot;)
 <h4>Documentation</h4>
 <p>The package includes all the following forms of documentation:</p>
 <ul>
-<li><input type="checkbox" disabled="" />
+<li><input type="checkbox" disabled="" checked="" />
 <strong>Installation instructions:</strong> for the package is found in README</li>
-<li><input type="checkbox" disabled="" />
+<li><input type="checkbox" disabled="" checked="" />
 <strong>Vignette(s)</strong> demonstrating major functionality that runs successfully locally</li>
-<li><input type="checkbox" disabled="" />
+<li><input type="checkbox" disabled="" checked="" />
 <strong>Function Documentation:</strong> for all exported functions in R help</li>
-<li><input type="checkbox" disabled="" />
+<li><input type="checkbox" disabled="" checked="" />
 <strong>Examples</strong> for all exported functions in R Help that run successfully locally</li>
 </ul>
 </div>
 <div id="functionality" class="section level4">
 <h4>Functionality</h4>
 <ul>
-<li><input type="checkbox" disabled="" />
+<li><input type="checkbox" disabled="" checked="" />
 <strong>Installation:</strong> Installation succeeds as documented.</li>
-<li><input type="checkbox" disabled="" />
+<li><input type="checkbox" disabled="" checked="" />
 <strong>Functionality:</strong> Any functional claims of the software been confirmed.</li>
-<li><input type="checkbox" disabled="" />
+<li><input type="checkbox" disabled="" checked="" />
 <strong>Automated tests:</strong> Unit tests cover essential functions of the package and a reasonable range of inputs and conditions. All tests pass on the local machine.</li>
 </ul>
 </div>

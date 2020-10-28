@@ -40,21 +40,21 @@ The goal of AustraliaCOVID19 is to see the coronavirus data of daily cases and c
 
 ## Possible improvements
 
-### 1. pkgdown website
+#### 1. pkgdown website
 
 The package does have a pkgdown website and pass the `pkgdown check` in `Action` tab, but author forgets to set the GitHub Pages setting to correct source. Anyway, I create the pkgdown website by myself. The website is clear and gives some example of how to use the Shiny App. The possible improvements could be don't forget to change the GitHub setting next time `r emo::ji("smile")`.
  
 
-### 2. documentation and README.md
+#### 2. documentation and README.md
 
 They are all clear and readable. The possible improvement could be enriching them in the future by adding more details.
 
-### 3. refactor
+#### 3. refactor
 
 Refactor functions are simple but effective, which are good. The possible improvement could be that Yiwen can try to refactor some more complicated functions in the future.
 
 
-### 4. `test_that` function
+#### 4. `test_that` function
 
 There is only on unit test. I hope there should be more in the future.
 
@@ -65,7 +65,7 @@ test_that("check the date range", {
 })
 ```
 
-### 5. Shiny app
+#### 5. Shiny app
 
 All plots within the Shiny app are interactive and functional. And the Shiny has clear UI and understandable plots. The possible improvement could be adding more tabs in the Shiny app, in order to make the whole Shiny app page fit to user's screen.
 
@@ -84,14 +84,14 @@ It is funny to review other's package. I understand it's not enough to just ensu
 
 The package includes all the following forms of documentation:
 
-- [ ] **Installation instructions:** for the package is found in README
-- [ ] **Vignette(s)** demonstrating major functionality that runs successfully locally
-- [ ] **Function Documentation:** for all exported functions in R help
-- [ ] **Examples** for all exported functions in R Help that run successfully locally
+- [x] **Installation instructions:** for the package is found in README
+- [x] **Vignette(s)** demonstrating major functionality that runs successfully locally
+- [x] **Function Documentation:** for all exported functions in R help
+- [x] **Examples** for all exported functions in R Help that run successfully locally
 
 
 #### Functionality
 
-- [ ] **Installation:** Installation succeeds as documented.
-- [ ] **Functionality:** Any functional claims of the software been confirmed.
-- [ ] **Automated tests:** Unit tests cover essential functions of the package and a reasonable range of inputs and conditions. All tests pass on the local machine.
+- [x] **Installation:** Installation succeeds as documented.
+- [x] **Functionality:** Any functional claims of the software been confirmed.
+- [x] **Automated tests:** Unit tests cover essential functions of the package and a reasonable range of inputs and conditions. All tests pass on the local machine.
